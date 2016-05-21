@@ -21,8 +21,12 @@ public class BDHandler  extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         //Creacion de las tablas que vamos a utilizar
         db.execSQL(BaseDatos.crearTablaP);
+        //Creacion de las tablas que vamos a utiliza
+        db.execSQL(BaseDatos.crearTablaP);
+
     }
 
     @Override

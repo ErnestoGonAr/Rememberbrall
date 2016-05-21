@@ -1,8 +1,9 @@
 package com.example.ernesto.rememberbrall;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.Date;
 
 /**
  * Created by ernesto on 21/05/16.
@@ -69,5 +70,7 @@ public class BaseDatos {
                 " FROM Prestamo;", null);
     }
 
-
+    public String convertirfecha(){
+        return "d";
+    }
 }

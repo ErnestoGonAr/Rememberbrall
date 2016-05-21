@@ -33,7 +33,6 @@ public class Prestamo extends Activity implements OnClickListener {
     private EditText nombret;
     private EditText prot;
     private EditText cart;
-    private DatePickerDialog fromDatePickerDialog;
     private DatePickerDialog toDatePickerDialog;
     private SimpleDateFormat dateFormatter;
     private Toast toast;
@@ -93,21 +92,20 @@ public class Prestamo extends Activity implements OnClickListener {
         String  campo=((TextView)findViewById(R.id.c)).getText().toString();
         String  campo2=((TextView)findViewById(R.id.n)).getText().toString();
         String  campo3=((TextView)findViewById(R.id.p)).getText().toString();
-        String  campo5=((TextView)findViewById(R.id.etxt_todate)).getText().toString();
-        if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo5.equals("")) {
+        String  campo4=((TextView)findViewById(R.id.etxt_todate)).getText().toString();
+        if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo4.equals("")){
+
             Toast.makeText(this, "Ha dejado campos vacios",
                     Toast.LENGTH_LONG).show();
                      return false;
         }
         return true;
 
+
     }
 
 
     public void insertar(View view){
-
-
-
 
         if(validaVacio()){
         String[] data= {nombret.getText().toString(),
