@@ -16,6 +16,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 //import static com.example.ernesto.rememberbrall.R.layout.Prestamo;
@@ -36,6 +37,7 @@ public class Prestamo extends Activity implements OnClickListener {
 
     private SimpleDateFormat dateFormatter;
     private Toast toast;
+
 
 
     @Override
@@ -91,11 +93,45 @@ public class Prestamo extends Activity implements OnClickListener {
         if(nombret.getText().toString().length()!=0 && cart.getText().toString().length()!=0 && prot.getText().toString().length()!=0)return true;
         return false;
     }
+    public void validaVacio(){
+        String  campo=((TextView)findViewById(R.id.c)).getText().toString();
+        String  campo2=((TextView)findViewById(R.id.n)).getText().toString();
+        String  campo3=((TextView)findViewById(R.id.p)).getText().toString();
+        String  campo4=((TextView)findViewById(R.id.etxt_fromdate)).getText().toString();
+        String  campo5=((TextView)findViewById(R.id.etxt_todate)).getText().toString();
+        if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo4.equals("") || campo5.equals("")) {
+            Toast.makeText(this, "Ha dejado campos vacios",
+                    Toast.LENGTH_LONG).show();
+        }
+
+
+    }
 
     public void insertar(View view){
 
+<<<<<<< HEAD
         toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
         toast.show();
+=======
+        BDHandler bd = new BDHandler(this);
+
+
+<<<<<<< HEAD
+        /*toast=Toast.makeText(getApplicationContext(),"Ha dejado campos vacios", Toast.LENGTH_LONG);
+        toast.show();*/
+        validaVacio();
+        //validaVacio(c2);
+        //validaVacio(c3);
+        //validaVacio(c4);
+        //validaVacio(c5);
+=======
+        toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
+        toast.show();
+>>>>>>> 43aa3f61603390cce098b55bc27c41adeda5501f
+        SQLiteDatabase db = bd.getWritableDatabase();
+        ContentValues nuevoRegistro = new ContentValues();
+        findViewsById();
+>>>>>>> ca249d3778b68fc8f0a0a992b9906633fc3aa876
 
         /*ContentValues nuevoRegistro = new ContentValues();
         nuevoRegistro.put("NombrePersona",nombret.getText().toString());

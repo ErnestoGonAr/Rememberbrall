@@ -130,7 +130,8 @@
         android:id="@+id/OKButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:onClick="insertar"/>
+        android:onClick="insertar"
+        />
 
 
 
