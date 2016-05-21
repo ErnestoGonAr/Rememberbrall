@@ -29,10 +29,8 @@ public class MainActivity extends AppCompatActivity {
         pres.setOnClickListener(new View.OnClickListener(){
             @Override
               public void onClick(View v){
-                setContentView(R.layout.prestamo);
                 Intent i = new Intent(MainActivity.this, Prestamo.class);
                 startActivity(i);
-
             }
         });
     }
