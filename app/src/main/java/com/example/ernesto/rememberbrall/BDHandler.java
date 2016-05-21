@@ -41,8 +41,6 @@ public class BDHandler  extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    //************OPERACIONES EN LA BD***********************
-
     public void insertarP(SQLiteDatabase db, String[] data) {
         String insertP = ("INSERT INTO Prestamo (NombrePersona, NombreObjeto, DescripcionObjeto, FechaP, FechaD, Status)" +
                 "VALUES ('" + data[0] + "', '" + data[1] + "', '" + data[2] + "', '" + data[3] + "', '" + data[4] + "', '" + data[5] + "');");
