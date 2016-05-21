@@ -1,5 +1,11 @@
 package com.example.ernesto.rememberbrall;
 
+<<<<<<< HEAD
+/**
+ * Created by betsy on 20/05/16.
+ */
+public class Ventana_principal {
+=======
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -64,4 +70,5 @@ public class Ventana_principal extends AppCompatActivity{
     }
 
 
+>>>>>>> d802310e266b5f63548accb1fb7c5e8e82e60e23
 }

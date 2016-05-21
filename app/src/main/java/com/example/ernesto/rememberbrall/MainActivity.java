@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+<<<<<<< HEAD
+=======
     EditText txtUsuario;
     EditText txtContraseña;
     Button btnSend;
@@ -61,4 +63,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+>>>>>>> d802310e266b5f63548accb1fb7c5e8e82e60e23
 }

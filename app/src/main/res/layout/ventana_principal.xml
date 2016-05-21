@@ -36,25 +36,48 @@ android:scaleType="centerCrop"
     android:id="@+id/Con"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentBottom="true"
     android:textAppearance="?android:textAppearanceLarge"
-    android:text="Consultar"
+    android:text="Ver Todo"
+    android:layout_above="@id/bus_cons"
+    android:layout_alignParentLeft="true"
     android:layout_marginLeft="16dp"
-    android:layout_marginBottom="36dp"
+    android:layout_marginTop="36dp"
     android:textSize="20sp"/>
-
 <Button
     android:id="@+id/Np"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textAppearance="?android:textAppearanceLarge"
-    android:layout_above="@id/Con"
     android:text="Nuevo Prestamo"
     android:layout_marginLeft="16dp"
-    android:layout_marginBottom="16dp"
-    android:textSize="20sp"
+    android:layout_marginTop="36dp"
+    android:textSize="18sp"
     />
+    <TextView
+        android:id="@+id/bus_cons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar Consulta"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/ed_text"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="24dp"/>
+    <Button
+        android:id="@+id/btn_consultar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consultar"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/ed_text"
+        android:layout_marginLeft="24dp"/>
+    <EditText
+        android:id="@+id/ed_text"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+
+        android:layout_centerVertical="true"/>
 
 
 
