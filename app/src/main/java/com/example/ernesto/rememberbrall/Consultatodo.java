@@ -4,13 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
- * Created by jesusmonroy on 21/05/16.
+ * Created by ernesto on 21/05/16.
  */
-public class Consulta extends Activity {
+public class Consultatodo extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.consulta);
+        setContentView(R.layout.consultatodo);
+
     }
 
 }

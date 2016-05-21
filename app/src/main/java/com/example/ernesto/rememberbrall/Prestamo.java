@@ -43,11 +43,10 @@ public class Prestamo extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prestamo);
 
-        dateFormatter = new SimpleDateFormat("yyyy-MM-DD", Locale.US);
+        dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         findViewsById();
         setDateTimeField();
     }
-
 
     @Override
     public void onClick(View v) {
@@ -93,9 +92,8 @@ public class Prestamo extends Activity implements OnClickListener {
         String  campo=((TextView)findViewById(R.id.c)).getText().toString();
         String  campo2=((TextView)findViewById(R.id.n)).getText().toString();
         String  campo3=((TextView)findViewById(R.id.p)).getText().toString();
-        String  campo4=((TextView)findViewById(R.id.etxt_fromdate)).getText().toString();
         String  campo5=((TextView)findViewById(R.id.etxt_todate)).getText().toString();
-        if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo4.equals("") || campo5.equals("")) {
+        if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo5.equals("")) {
             Toast.makeText(this, "Ha dejado campos vacios",
                     Toast.LENGTH_LONG).show();
                      return false;
@@ -106,10 +104,6 @@ public class Prestamo extends Activity implements OnClickListener {
 
 
     public void insertar(View view){
-
-
-
-
         if(validaVacio()){
         String[] data= {nombret.getText().toString(),
                 prot.getText().toString(),
