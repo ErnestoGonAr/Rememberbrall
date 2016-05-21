@@ -17,14 +17,13 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
+
         <activity
             android:name=".Prestamo"
             android:parentActivityName=".MainActivity"/>
-=======
-        <activity android:name=".Prestamo"/>
-        <activity android:name=".Consulta"/>
->>>>>>> f3b1061ddbc70f3f1945fa0b77d128deadd8088e
+        <activity android:name=".Consulta"
+            android:parentActivityName=".MainActivity"/>
+
 
 
     </application>
