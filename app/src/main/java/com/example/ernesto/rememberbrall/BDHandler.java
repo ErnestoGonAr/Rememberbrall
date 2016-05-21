@@ -29,23 +29,7 @@ public class BDHandler  extends SQLiteOpenHelper {
                 "FechaD TEXT," +
                 "Status TEXT)";
 
-        String crearTablaU = "CREATE TABLE Usuario "+
-                "(idUsuario INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                "NombreUsuario TEXT, "+
-                "Pass TEXT);";
-
-        String crearTablaPU = "CREATE TABLE Prestamo_Usuario "+
-                "(FOREIGN KEY(id_Usuario) REFERENCES Usuario(idUsuario),+" +
-                "FOREIGN KEY(id_Prestamo) REFERENCES Prestamo(idPrestamo);";
-
         db.execSQL(crearTablaP);
-        db.execSQL(crearTablaU);
-        db.execSQL(crearTablaPU);
-
-
-         ///Esto es pa probarlo
-        
-
     }
 
     @Override
@@ -59,44 +43,32 @@ public class BDHandler  extends SQLiteOpenHelper {
 
     //************OPERACIONES EN LA BD***********************
 
-    public void insertarP(SQLiteDatabase db,int usuario, String[] data){
+    public void insertarP(SQLiteDatabase db, String[] data) {
         String insertP = ("INSERT INTO Prestamo (NombrePersona, NombreObjeto, DescripcionObjeto, FechaP, FechaD, Status)" +
-                "VALUES ("+data[0]+","+data[1]+","+data[2]+","+data[3]+","+data[4]+","+data[5]+");");
-        String insertPU =("INSERT INTO Prestamo_Usuario (idPrestamo, idUsuario)" +
-                "VALUES ("+"el idPrestamo"+","+usuario+");"); ///Falta poner que Prestamo le va a agregar
-
+                "VALUES ('" + data[0] + "', '" + data[1] + "', '" + data[2] + "', '" + data[3] + "', '" + data[4] + "', '" + data[5] + "');");
         db.execSQL(insertP);
-        db.execSQL(insertPU);
     }
 
-    public void insertarU(SQLiteDatabase db, String[] data){
-        String insert = ("INSERT INTO Usuario (NombreUsuario, Pass)" +
-                "VALUES ("+data[0]+","+data[1]+");");
-
-        db.execSQL(insert);
-    }
 
     public void eliminar(SQLiteDatabase db, int id){
         String deleteP = "DELETE FROM Prestamo WHERE idPrestamo="+id+");";
-        String deletePU = "DELETE FROM Prestamo_Usuario WHERE idPrestamo="+id+");";
 
         db.execSQL(deleteP);
-        db.execSQL(deletePU);
     }
 
     public void actualizarStatus(SQLiteDatabase db, int id,String status){
-        String updateStatus= "UPDATE Prestamo SET status = "+status + "WHERE id = "+id+");";
+        String updateStatus= "UPDATE Prestamo SET status = '"+status + "' WHERE id = "+id+");";
 
         db.execSQL(updateStatus);
     }
 
     public void actualizarDatosPrestamo(SQLiteDatabase db, int id, String[] data){
-        String updateData = ("UPDATE Prestamo SET NombrePersona= "+data[0]+
-                ", Nombre Objeto = "+data[1]+
-                ", DescripcionObjeto = "+data[2]+
-                ", FechaP = "+data[3]+
-                ", FechaD = "+data[4]+
-                ", status = "+data[5]+");");
+        String updateData = ("UPDATE Prestamo SET NombrePersona= '"+data[0]+
+                "', Nombre Objeto = '"+data[1]+
+                "', DescripcionObjeto = '"+data[2]+
+                "', FechaP = '"+data[3]+
+                "', FechaD = '"+data[4]+
+                "', status = '"+data[5]+"');");
 
         db.execSQL(updateData);
     }
@@ -115,19 +87,4 @@ public class BDHandler  extends SQLiteOpenHelper {
 
         return db.query(tabla, columnas, where, args, groupBy, having, orderBy, limit);
     }
-
-    public Cursor getUsuarios(SQLiteDatabase db){
-        String tabla="Usuario";
-        String[] columnas = new String[] {"idUsuario", "NombreUsuario", "Pass"};
-        String where = null;
-        String[] args =null;
-        String groupBy = null;
-        String having=null;
-        String orderBy= null;
-        String limit= "100";
-
-        return db.query(tabla, columnas, where, args, groupBy, having, orderBy, limit);
-    }
-
-
 }
