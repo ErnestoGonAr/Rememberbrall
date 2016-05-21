@@ -25,20 +25,17 @@ import android.widget.Toast;
  * Created by ernesto on 20/05/16.
  */
 public class Prestamo extends Activity implements OnClickListener {
-    private BaseDatos db;
 
-    private EditText fromDateEtxt;
+    public BaseDatos bd;
+
     private EditText toDateEtxt;
     private EditText nombret;
     private EditText prot;
     private EditText cart;
     private DatePickerDialog fromDatePickerDialog;
     private DatePickerDialog toDatePickerDialog;
-
     private SimpleDateFormat dateFormatter;
     private Toast toast;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +43,7 @@ public class Prestamo extends Activity implements OnClickListener {
         setContentView(R.layout.prestamo);
 
         dateFormatter = new SimpleDateFormat("yyyy-MM-DD", Locale.US);
-
         findViewsById();
-
         setDateTimeField();
     }
 
@@ -108,38 +103,7 @@ public class Prestamo extends Activity implements OnClickListener {
     }
 
     public void insertar(View view){
-
-<<<<<<< HEAD
-        toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
-        toast.show();
-=======
-        BDHandler bd = new BDHandler(this);
-
-
-<<<<<<< HEAD
-        /*toast=Toast.makeText(getApplicationContext(),"Ha dejado campos vacios", Toast.LENGTH_LONG);
-        toast.show();*/
         validaVacio();
-        //validaVacio(c2);
-        //validaVacio(c3);
-        //validaVacio(c4);
-        //validaVacio(c5);
-=======
-        toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
-        toast.show();
->>>>>>> 43aa3f61603390cce098b55bc27c41adeda5501f
-        SQLiteDatabase db = bd.getWritableDatabase();
-        ContentValues nuevoRegistro = new ContentValues();
-        findViewsById();
->>>>>>> ca249d3778b68fc8f0a0a992b9906633fc3aa876
-
-        /*ContentValues nuevoRegistro = new ContentValues();
-        nuevoRegistro.put("NombrePersona",nombret.getText().toString());
-        nuevoRegistro.put("NombreObjeto",prot.getText().toString());
-        nuevoRegistro.put("DescripcionObjeto",cart.getText().toString());
-        nuevoRegistro.put("FechaD",toDateEtxt.getText().toString());
-        nuevoRegistro.put("Status","NO ENTREGADO");*/
-
         String[] data= {nombret.getText().toString(),
                 prot.getText().toString(),
                 cart.getText().toString(),
@@ -148,7 +112,7 @@ public class Prestamo extends Activity implements OnClickListener {
                 toDateEtxt.getText().toString(),
                 "NO ENTREGADO"};
 
-        db.insertarP(data);
+        bd.insertarP(data);
 
     }
 

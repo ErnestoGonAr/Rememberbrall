@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
         consul = (Button) findViewById(R.id.btn_consultar);
         verto = (Button) findViewById(R.id.Con);
     }
-<<<<<<< HEAD
-=======
+
 
    /* public void lanzar() {
         //Crear un nuevo intent
@@ -58,6 +57,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }*/
 
->>>>>>> ca249d3778b68fc8f0a0a992b9906633fc3aa876
+
 
 }

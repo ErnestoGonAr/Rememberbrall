@@ -21,12 +21,11 @@ public class BaseDatos {
 
     final public static String crearTablaP = "CREATE TABLE Prestamo " +
             "(idPrestamo INTEGER PRIMARY KEY AUTOINCREMENT," +
-
             NombrePersona + ","+
             NombreObjeto +"," +
             DescripcionObjeto +","+
             FechaD +","+
-            Status +")";
+            Status +");";
 
     public void insertarP(String[] data) {
         String insertP = ("INSERT INTO Prestamo ("+NombrePersona+","+
@@ -37,7 +36,6 @@ public class BaseDatos {
                 "VALUES (" + data[0] + ", " + data[1] + ", " + data[2] + ", " + data[3] + ", " + data[4] + ");");
         db.execSQL(insertP);
     }
-
 
     public void eliminar(int id){
         String deleteP = "DELETE FROM Prestamo WHERE idPrestamo="+id+");";
