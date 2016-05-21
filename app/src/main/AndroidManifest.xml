@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Prestamo"/>
+        <activity
+            android:name=".Prestamo"
+            android:parentActivityName=".MainActivity"/>
 
 
     </application>
