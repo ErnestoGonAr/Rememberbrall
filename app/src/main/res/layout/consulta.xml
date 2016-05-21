@@ -11,7 +11,8 @@
             android:layout_margin="32dp"
             android:text="Consulta"
             android:textSize="20sp"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:onClick="onClick"/>
     
         <EditText
             android:id="@+id/name"

@@ -22,29 +22,7 @@ public class BDHandler  extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //Creacion de las tablas que vamos a utilizar
-<<<<<<< HEAD
-
-        String crearTablaP = "CREATE TABLE Prestamo " +
-                "(idPrestamo INTEGER PRIMARY KEY AUTOINCREMENT," +
-
-                NombrePersona + ","+
-                NombreObjeto +"," +
-                DescripcionObjeto +","+
-                FechaP +","+
-                FechaD +","+
-                Status +")";
-
-             /*   "NombrePersona TEXT," +
-                "NombreObjeto TEXT," +
-                "DescripcionObjeto TEXT," +
-                "FechaD TEXT," +
-                "Status TEXT);";*/
-
-
-        db.execSQL(crearTablaP);
-=======
         db.execSQL(BaseDatos.crearTablaP);
->>>>>>> 4557f70f0112bf2b9bb2730f603f9fd7b97c2ce5
     }
 
     @Override
