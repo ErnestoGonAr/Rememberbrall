@@ -129,6 +129,7 @@ public class Prestamo extends Activity implements OnClickListener {
         BDHandler bd = new BDHandler(this);
 
 
+<<<<<<< HEAD
         /*toast=Toast.makeText(getApplicationContext(),"Ha dejado campos vacios", Toast.LENGTH_LONG);
         toast.show();*/
         validaVacio();
@@ -136,6 +137,10 @@ public class Prestamo extends Activity implements OnClickListener {
         //validaVacio(c3);
         //validaVacio(c4);
         //validaVacio(c5);
+=======
+        toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
+        toast.show();
+>>>>>>> 43aa3f61603390cce098b55bc27c41adeda5501f
         SQLiteDatabase db = bd.getWritableDatabase();
         ContentValues nuevoRegistro = new ContentValues();
         findViewsById();
