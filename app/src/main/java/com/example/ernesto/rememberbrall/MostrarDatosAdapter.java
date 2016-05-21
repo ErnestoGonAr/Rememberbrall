@@ -17,7 +17,7 @@ import android.widget.TextView;
 /**
  * Created by edgar on 21/05/16.
  */
-public class MostrarDatosAdapter extends CursorAdapter {
+/*public class MostrarDatosAdapter extends CursorAdapter {
 
     private BDHandler db;
 
@@ -40,4 +40,4 @@ public class MostrarDatosAdapter extends CursorAdapter {
 
 
 
-}
+}*/

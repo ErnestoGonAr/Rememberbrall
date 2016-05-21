@@ -21,9 +21,9 @@
         <activity
             android:name=".Prestamo"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Consulta"
+        <activity
+            android:name=".Consulta"
             android:parentActivityName=".MainActivity"/>
-
 
 
     </application>

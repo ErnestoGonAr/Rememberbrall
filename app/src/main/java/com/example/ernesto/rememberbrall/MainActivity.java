@@ -43,14 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
     public void inicializando(){
         pres = (Button) findViewById(R.id.Np);
         consul = (Button) findViewById(R.id.btn_consultar);
         verto = (Button) findViewById(R.id.Con);
     }
+
 
    /* public void lanzar() {
         //Crear un nuevo intent
@@ -58,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         //Iniciar actividad
         startActivity(intent);
     }*/
+
 
 
 }
