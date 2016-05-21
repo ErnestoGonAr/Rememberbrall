@@ -51,6 +51,7 @@ android:scaleType="centerCrop"
     android:layout_marginLeft="16dp"
     android:layout_marginTop="36dp"
     android:textSize="18sp"
+    android:onClick="checkingButtons"
     />
     <TextView
         android:id="@+id/bus_cons"

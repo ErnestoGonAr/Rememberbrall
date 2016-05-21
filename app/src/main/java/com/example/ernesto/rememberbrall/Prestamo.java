@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.DatePicker;
@@ -21,11 +22,14 @@ import android.widget.EditText;
 public class Prestamo extends Activity implements OnClickListener {
     private EditText fromDateEtxt;
     private EditText toDateEtxt;
-
+    private EditText nombret;
+    private EditText prot;
+    private EditText cart;
     private DatePickerDialog fromDatePickerDialog;
     private DatePickerDialog toDatePickerDialog;
 
     private SimpleDateFormat dateFormatter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,36 @@ public class Prestamo extends Activity implements OnClickListener {
         findViewsById();
 
         setDateTimeField();
+
+        nombret.setOnKeyListener(new View.OnKeyListener(){
+            public boolean onKey(View v, int keyCode, KeyEvent event){
+                if(keyCode == KeyEvent.KEYCODE_ENTER){
+                    prot.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        prot.setOnKeyListener(new View.OnKeyListener(){
+            public boolean onKey(View v, int keyCode, KeyEvent event){
+                if(keyCode == KeyEvent.KEYCODE_ENTER){
+                    cart.requestFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        cart.setOnKeyListener(new View.OnKeyListener(){
+            public boolean onKey(View v, int keyCode, KeyEvent event){
+                if(keyCode == KeyEvent.KEYCODE_ENTER){
+                    cart.clearFocus();
+                    return true;
+                }
+                return false;
+            }
+        });
 
     }
 
@@ -57,6 +91,10 @@ public class Prestamo extends Activity implements OnClickListener {
 
         toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
         toDateEtxt.setInputType(InputType.TYPE_NULL);
+
+        nombret = (EditText) findViewById(R.id.editText);
+        prot = (EditText) findViewById(R.id.p);
+        cart = (EditText) findViewById(R.id.c);
 
     }
 
