@@ -1,6 +1,8 @@
 package com.example.ernesto.rememberbrall;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
     EditText txtContraseña;
     Button btnSend;
     Toast toast1;
+    BDHandler bd = new BDHandler(this);
+    SQLiteDatabase db;
+    Cursor c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                if (txtUsuario.getText().toString().equals("")
-                        && txtContraseña.getText().toString().equals("")
-                        ) {
+                if (!validar()) {
                     toast1 = Toast.makeText(getApplicationContext(), "no se pudo ingresar", Toast.LENGTH_SHORT);
                     toast1.show();
                 }
@@ -40,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private boolean validar(){
+        if(txtUsuario.getText().length()==0 || txtContraseña.getText().length()==0)return false;
+        db = bd.getReadableDatabase();
+        c = bd.getUsuarios(db);
+
+
+
+        return true;
+    }
+
     public void lanzar() {
         //Crear un nuevo intent
         Intent intent = new Intent(this,Ventana_principal.class);

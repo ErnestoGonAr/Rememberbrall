@@ -25,9 +25,9 @@ public class BDHandler  extends SQLiteOpenHelper {
                 "NombrePersona TEXT," +
                 "NombreObjeto TEXT," +
                 "DescripcionObjeto TEXT" +
-                "FechaP DATE," +
-                "FechaD DATE," +
-                "Status)";
+                "FechaP TEXT," +
+                "FechaD TEXT," +
+                "Status TEXT)";
 
         String crearTablaU = "CREATE TABLE Usuario "+
                 "(idUsuario INTEGER PRIMARY KEY AUTOINCREMENT, "+
@@ -41,6 +41,10 @@ public class BDHandler  extends SQLiteOpenHelper {
         db.execSQL(crearTablaP);
         db.execSQL(crearTablaU);
         db.execSQL(crearTablaPU);
+
+
+         ///Esto es pa probarlo
+        
 
     }
 
@@ -99,9 +103,22 @@ public class BDHandler  extends SQLiteOpenHelper {
 
     //*******************CONSULTAS EN LA BD**************
 
-    private Cursor getPrestamos(SQLiteDatabase db){
-        String tabla="Usuario";
+    private Cursor getPrestamos(SQLiteDatabase db, int usuario){
+        String tabla="Prestamo";
         String[] columnas = new String[] {"NombrePersona", "NombreObjeto", "DescripcionObjeto", "FechaP", "FechaD", "Status"};
+        String where = null;
+        String[] args =null;
+        String groupBy = null;
+        String having=null;
+        String orderBy= null;
+        String limit= "100";
+
+        return db.query(tabla, columnas, where, args, groupBy, having, orderBy, limit);
+    }
+
+    public Cursor getUsuarios(SQLiteDatabase db){
+        String tabla="Usuario";
+        String[] columnas = new String[] {"idUsuario", "NombreUsuario", "Pass"};
         String where = null;
         String[] args =null;
         String groupBy = null;
