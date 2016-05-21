@@ -112,6 +112,8 @@ public class Prestamo extends Activity implements OnClickListener {
     public void insertar(View view){
 
         BDHandler bd = new BDHandler(this);
+
+
         toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
         toast.show();
         SQLiteDatabase db = bd.getWritableDatabase();
