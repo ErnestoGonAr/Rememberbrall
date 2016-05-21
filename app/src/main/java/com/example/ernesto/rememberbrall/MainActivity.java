@@ -57,12 +57,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-   /* public void lanzar() {
-        //Crear un nuevo intent
-        Intent intent = new Intent(this,Ventana_principal.class);
-        //Iniciar actividad
-        startActivity(intent);
-    }*/
 
 
 
