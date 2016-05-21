@@ -106,32 +106,11 @@ public class Prestamo extends Activity implements OnClickListener {
 
 
     public void insertar(View view){
-<<<<<<< HEAD
 
-        BDHandler bd = new BDHandler(this);
-        /*toast=Toast.makeText(getApplicationContext(),"Ha dejado campos vacios", Toast.LENGTH_LONG);
-        toast.show();*/
-        validaVacio();
-        toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
-        toast.show();
 
-        SQLiteDatabase db = bd.getWritableDatabase();
-        ContentValues nuevoRegistro = new ContentValues();
-        findViewsById();
 
-        nuevoRegistro.put("NombrePersona",nombret.getText().toString());
 
-        nuevoRegistro.put("NombreObjeto",prot.getText().toString());
-
-        nuevoRegistro.put("DescripcionObjeto",cart.getText().toString());
-        nuevoRegistro.put("FechaD",toDateEtxt.getText().toString());
-        nuevoRegistro.put("Status","NO ENTREGADO");
-        db.insert("Prestamo",null,nuevoRegistro);
-
-        db.close();
-
-=======
-        validaVacio();
+        if(validaVacio()){
         String[] data= {nombret.getText().toString(),
                 prot.getText().toString(),
                 cart.getText().toString(),
@@ -141,7 +120,7 @@ public class Prestamo extends Activity implements OnClickListener {
                 "NO ENTREGADO"};
 
         bd.insertarP(data);
->>>>>>> 4557f70f0112bf2b9bb2730f603f9fd7b97c2ce5
+        }
 
     }
 
