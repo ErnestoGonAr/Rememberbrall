@@ -44,8 +44,14 @@
     android:layout_below="@+id/Np"
     android:layout_marginLeft="16dp"
     android:layout_marginTop="36dp"
+<<<<<<< HEAD
     android:textSize="20sp"/>
 
+=======
+    android:textSize="18sp"
+    android:onClick="checkingButtons"
+    />
+>>>>>>> 1381cf660a071b224e4e38077043712582b23665
     <TextView
         android:id="@+id/bus_cons"
         android:layout_width="wrap_content"
