@@ -30,12 +30,20 @@ public class BDHandler  extends SQLiteOpenHelper {
 
         String crearTablaP = "CREATE TABLE Prestamo " +
                 "(idPrestamo INTEGER PRIMARY KEY AUTOINCREMENT," +
+<<<<<<< HEAD
                 NombrePersona + ","+
                 NombreObjeto +"," +
                 DescripcionObjeto +","+
                 FechaP +","+
                 FechaD +","+
                 Status +")";
+=======
+                "NombrePersona TEXT," +
+                "NombreObjeto TEXT," +
+                "DescripcionObjeto TEXT," +
+                "FechaD TEXT," +
+                "Status TEXT);";
+>>>>>>> cdda8e5c2698f662a1d94f595877881399a1cc46
 
         db.execSQL(crearTablaP);
     }
@@ -43,7 +51,7 @@ public class BDHandler  extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed, all data will be gone!!!
-        db.execSQL("DROP TABLE IF EXISTS " + "Prestamo.TABLE");
+        db.execSQL("DROP TABLE IF EXISTS " + "Prestamo.TABLE;");
 
         // Create tables again
         onCreate(db);

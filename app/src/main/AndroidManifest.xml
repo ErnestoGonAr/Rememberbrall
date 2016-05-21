@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+<<<<<<< HEAD
+        <activity
+            android:name=".Prestamo"
+            android:parentActivityName=".MainActivity"/>
+=======
+        <activity android:name=".Prestamo"/>
+        <activity android:name=".Consulta"/>
+>>>>>>> f3b1061ddbc70f3f1945fa0b77d128deadd8088e
 
 
     </application>

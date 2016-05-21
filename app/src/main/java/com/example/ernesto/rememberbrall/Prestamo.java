@@ -1,5 +1,7 @@
 package com.example.ernesto.rememberbrall;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -8,10 +10,13 @@ import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 //import static com.example.ernesto.rememberbrall.R.layout.Prestamo;
 
@@ -21,11 +26,15 @@ import android.widget.EditText;
 public class Prestamo extends Activity implements OnClickListener {
     private EditText fromDateEtxt;
     private EditText toDateEtxt;
-
+    private EditText nombret;
+    private EditText prot;
+    private EditText cart;
     private DatePickerDialog fromDatePickerDialog;
     private DatePickerDialog toDatePickerDialog;
 
     private SimpleDateFormat dateFormatter;
+    private Toast toast;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +46,11 @@ public class Prestamo extends Activity implements OnClickListener {
         findViewsById();
 
         setDateTimeField();
-
     }
+
+
+
+
 
     @Override
     public void onClick(View v) {
@@ -57,6 +69,10 @@ public class Prestamo extends Activity implements OnClickListener {
 
         toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
         toDateEtxt.setInputType(InputType.TYPE_NULL);
+
+        nombret = (EditText) findViewById(R.id.n);
+        prot = (EditText) findViewById(R.id.p);
+        cart = (EditText) findViewById(R.id.c);
 
     }
 
@@ -85,5 +101,36 @@ public class Prestamo extends Activity implements OnClickListener {
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
     }
+
+    private boolean validar(){
+        toast.setText(nombret.getText());
+        toast.show();
+        if(nombret.getText().toString().length()!=0 && cart.getText().toString().length()!=0 && prot.getText().toString().length()!=0)return true;
+        return false;
+    }
+
+    public void insertar(View view){
+
+        BDHandler bd = new BDHandler(this);
+        toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
+        toast.show();
+        SQLiteDatabase db = bd.getWritableDatabase();
+        ContentValues nuevoRegistro = new ContentValues();
+        findViewsById();
+
+        nuevoRegistro.put("NombrePersona",nombret.getText().toString());
+
+        nuevoRegistro.put("NombreObjeto",prot.getText().toString());
+
+        nuevoRegistro.put("DescripcionObjeto",cart.getText().toString());
+        nuevoRegistro.put("FechaD",toDateEtxt.getText().toString());
+        nuevoRegistro.put("Status","NO ENTREGADO");
+        db.insert("Prestamo",null,nuevoRegistro);
+
+        db.close();
+
+
+    }
+
 
 }
