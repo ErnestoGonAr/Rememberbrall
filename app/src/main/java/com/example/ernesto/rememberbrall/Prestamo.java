@@ -11,6 +11,7 @@ import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.text.InputType;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
@@ -110,7 +111,7 @@ public class Prestamo extends Activity implements OnClickListener {
         if(nombret.getText().toString().length()!=0 && cart.getText().toString().length()!=0 && prot.getText().toString().length()!=0)return true;
         return false;
     }
-    public void validaVacio(){
+    public boolean validaVacio(){
         String  campo=((TextView)findViewById(R.id.c)).getText().toString();
         String  campo2=((TextView)findViewById(R.id.n)).getText().toString();
         String  campo3=((TextView)findViewById(R.id.p)).getText().toString();
@@ -119,28 +120,22 @@ public class Prestamo extends Activity implements OnClickListener {
         if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo4.equals("") || campo5.equals("")) {
             Toast.makeText(this, "Ha dejado campos vacios",
                     Toast.LENGTH_LONG).show();
+                     return false;
         }
-
+        return true;
 
     }
+
 
     public void insertar(View view){
 
         BDHandler bd = new BDHandler(this);
-
-
-<<<<<<< HEAD
         /*toast=Toast.makeText(getApplicationContext(),"Ha dejado campos vacios", Toast.LENGTH_LONG);
         toast.show();*/
         validaVacio();
-        //validaVacio(c2);
-        //validaVacio(c3);
-        //validaVacio(c4);
-        //validaVacio(c5);
-=======
         toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
         toast.show();
->>>>>>> 43aa3f61603390cce098b55bc27c41adeda5501f
+
         SQLiteDatabase db = bd.getWritableDatabase();
         ContentValues nuevoRegistro = new ContentValues();
         findViewsById();

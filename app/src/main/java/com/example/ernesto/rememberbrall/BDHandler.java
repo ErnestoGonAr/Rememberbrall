@@ -31,20 +31,20 @@ public class BDHandler  extends SQLiteOpenHelper {
 
         String crearTablaP = "CREATE TABLE Prestamo " +
                 "(idPrestamo INTEGER PRIMARY KEY AUTOINCREMENT," +
-<<<<<<< HEAD
+
                 NombrePersona + ","+
                 NombreObjeto +"," +
                 DescripcionObjeto +","+
                 FechaP +","+
                 FechaD +","+
                 Status +")";
-=======
-                "NombrePersona TEXT," +
+
+             /*   "NombrePersona TEXT," +
                 "NombreObjeto TEXT," +
                 "DescripcionObjeto TEXT," +
                 "FechaD TEXT," +
-                "Status TEXT);";
->>>>>>> cdda8e5c2698f662a1d94f595877881399a1cc46
+                "Status TEXT);";*/
+
 
         db.execSQL(crearTablaP);
     }
