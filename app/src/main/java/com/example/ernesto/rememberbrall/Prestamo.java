@@ -24,6 +24,8 @@ import android.widget.Toast;
  * Created by ernesto on 20/05/16.
  */
 public class Prestamo extends Activity implements OnClickListener {
+    private BaseDatos db;
+
     private EditText fromDateEtxt;
     private EditText toDateEtxt;
     private EditText nombret;
@@ -41,7 +43,7 @@ public class Prestamo extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prestamo);
 
-        dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+        dateFormatter = new SimpleDateFormat("yyyy-MM-DD", Locale.US);
 
         findViewsById();
 
@@ -49,26 +51,18 @@ public class Prestamo extends Activity implements OnClickListener {
     }
 
 
-
-
-
     @Override
     public void onClick(View v) {
 
-        if(v == fromDateEtxt) {
-            fromDatePickerDialog.show();
-        } else if(v == toDateEtxt) {
+        if(v == toDateEtxt) {
             toDatePickerDialog.show();
         }
     }
 
     private void findViewsById() {
-        fromDateEtxt = (EditText) findViewById(R.id.etxt_fromdate);
-        fromDateEtxt.setInputType(InputType.TYPE_NULL);
-        fromDateEtxt.requestFocus();
 
         toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
-        toDateEtxt.setInputType(InputType.TYPE_NULL);
+        //toDateEtxt.setInputType(InputType.TYPE_NULL);
 
         nombret = (EditText) findViewById(R.id.n);
         prot = (EditText) findViewById(R.id.p);
@@ -77,20 +71,9 @@ public class Prestamo extends Activity implements OnClickListener {
     }
 
     private void setDateTimeField() {
-        fromDateEtxt.setOnClickListener(this);
         toDateEtxt.setOnClickListener(this);
 
         Calendar newCalendar = Calendar.getInstance();
-        fromDatePickerDialog = new DatePickerDialog(this, new OnDateSetListener() {
-
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                Calendar newDate = Calendar.getInstance();
-                newDate.set(year, monthOfYear, dayOfMonth);
-                fromDateEtxt.setText(dateFormatter.format(newDate.getTime()));
-            }
-
-        },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-
         toDatePickerDialog = new DatePickerDialog(this, new OnDateSetListener() {
 
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -111,26 +94,25 @@ public class Prestamo extends Activity implements OnClickListener {
 
     public void insertar(View view){
 
-        BDHandler bd = new BDHandler(this);
-
-
         toast=Toast.makeText(getApplicationContext(),"TU CULO", Toast.LENGTH_LONG);
         toast.show();
-        SQLiteDatabase db = bd.getWritableDatabase();
-        ContentValues nuevoRegistro = new ContentValues();
-        findViewsById();
 
+        /*ContentValues nuevoRegistro = new ContentValues();
         nuevoRegistro.put("NombrePersona",nombret.getText().toString());
-
         nuevoRegistro.put("NombreObjeto",prot.getText().toString());
-
         nuevoRegistro.put("DescripcionObjeto",cart.getText().toString());
         nuevoRegistro.put("FechaD",toDateEtxt.getText().toString());
-        nuevoRegistro.put("Status","NO ENTREGADO");
-        db.insert("Prestamo",null,nuevoRegistro);
+        nuevoRegistro.put("Status","NO ENTREGADO");*/
 
-        db.close();
+        String[] data= {nombret.getText().toString(),
+                prot.getText().toString(),
+                cart.getText().toString(),
+                prot.getText().toString(),
+                cart.getText().toString(),
+                toDateEtxt.getText().toString(),
+                "NO ENTREGADO"};
 
+        db.insertarP(data);
 
     }
 
