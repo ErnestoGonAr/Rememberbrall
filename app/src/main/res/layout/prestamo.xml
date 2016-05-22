@@ -7,27 +7,42 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-
+    android:background="#72ff2b"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="36dp"
+        android:fontFamily="casual"
+        android:text="Nuevo Prestamo "
+        android:layout_centerHorizontal="true"
+        android:layout_margin="0dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Nombre"
-        android:text="Nombre"
+        android:fontFamily="monospace"
         android:textSize="20sp"
-        android:textColor="#F44336"
-        android:layout_marginTop="40dp"
+        android:textColor="#2a3b7d"
+        android:text="Nombre"
+        android:layout_marginTop="70dp"
         android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Producto"
-        android:text="Producto"
+        android:fontFamily="monospace"
         android:textSize="20sp"
-        android:textColor="#F44336"
+        android:textColor="#2a3b7d"
+        android:text="Producto"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/Nombre"
         />
@@ -37,9 +52,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Carac"
-        android:text="Caracteristicas"
+        android:fontFamily="monospace"
         android:textSize="20sp"
-        android:textColor="#F44336"
+        android:textColor="#2a3b7d"
+        android:text="Caracteristicas"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/Producto"
         />
@@ -74,7 +90,7 @@
         android:nextFocusDown="@id/p"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:lines="1"
         android:scrollHorizontally="true"
         android:ellipsize="end"
@@ -104,7 +120,8 @@
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:onClick="onClick"
-            android:textColorHint="#F44336"
+            android:textColorHint="#2a3b7d"
+            android:fontFamily="monospace"
             android:hint="@string/to_date" />
     </LinearLayout>
 
@@ -112,6 +129,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:textColor="#2a3b7d"
+        android:fontFamily="monospace"
         android:text="OK"
         android:id="@+id/OKButton"
         android:layout_alignParentBottom="true"
