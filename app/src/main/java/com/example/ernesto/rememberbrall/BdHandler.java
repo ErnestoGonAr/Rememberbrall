@@ -1,5 +1,6 @@
 package com.example.ernesto.rememberbrall;
 
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -7,12 +8,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by ernesto on 21/05/16.
  */
-public class BdHandler extends SQLiteOpenHelper{
-    private static final String DB_NAME= "Prestamos.sqlite";
-    private static final int VERSION = 1;
+public class BdHandler extends SQLiteOpenHelper {
+    private static final String DB_NAME = "Prestamos.sqlite";
+    private static final int VERSION = 2;
 
     public BdHandler(Context context) {
-        super(context,DB_NAME,null,VERSION);
+        super(context, DB_NAME, null, VERSION);
     }
 
     @Override
@@ -21,8 +22,9 @@ public class BdHandler extends SQLiteOpenHelper{
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+    public void onUpgrade(SQLiteDatabase bd, int i, int i1) {
+        bd.execSQL("DROP TABLE IF EXIST Prestamo");
+        onCreate(bd);
     }
 
 }

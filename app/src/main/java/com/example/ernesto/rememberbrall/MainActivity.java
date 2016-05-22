@@ -29,10 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         db = new DbManager(this);
 
-        db.insertar(new String[]{"Pepe" ,"Lapiz", "Es amarillo", "2016-05-23", "NO ENTREGADO"});
-        db.insertar(new String[]{"Edgar" ,"Botella", "Es azul", "2016-05-24", "NO ENTREGADO"});
-        db.insertar(new String[]{"Betsy" ,"Cuaderno", "Es negro", "2016-05-25", "NO ENTREGADO"});
-
         c= db.leerRegistros();
 
         inicializando();
@@ -53,13 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        verto.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent i = new Intent(MainActivity.this, Consultatodo.class);
-                startActivity(i);
-            }
-        });
+
 
     }
 
@@ -68,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
         consul = (Button) findViewById(R.id.btn_consultar);
         verto = (Button) findViewById(R.id.Con);
     }
-
-
-
 
 
 }

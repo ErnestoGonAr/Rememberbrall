@@ -1,3 +1,4 @@
+
 package com.example.ernesto.rememberbrall;
 
 import android.app.Activity;
@@ -48,3 +49,4 @@ public class Consulta extends AppCompatActivity {
         list.setAdapter(adapter);
     }
 }
+

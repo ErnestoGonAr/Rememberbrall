@@ -41,11 +41,11 @@ public class DbManager {
 
     private ContentValues generarValores(String[] data){
         ContentValues contenedor = new ContentValues();
-            contenedor.put(NombrePersona,data[0]);
-            contenedor.put(Objeto,data[1]);
-            contenedor.put(Descripcion,data[2]);
-            contenedor.put(Fecha,data[3]);
-            contenedor.put(Status,data[4]);
+        contenedor.put(NombrePersona,data[0]);
+        contenedor.put(Objeto,data[1]);
+        contenedor.put(Descripcion,data[2]);
+        contenedor.put(Fecha,data[3]);
+        contenedor.put(Status,data[4]);
         return contenedor;
     }
 
