@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         inicializando();
 
-
-
         pres.setOnClickListener(new View.OnClickListener(){
             @Override
               public void onClick(View v){
