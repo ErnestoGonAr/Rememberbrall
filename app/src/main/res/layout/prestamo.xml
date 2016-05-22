@@ -7,11 +7,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+<<<<<<< HEAD
 
+=======
+    android:background="#72ff2b"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
     tools:context=".MainActivity">
 
 
     <TextView
+<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Nombre"
@@ -19,15 +24,45 @@
         android:textSize="20sp"
         android:textColor="#F44336"
         android:layout_marginTop="40dp"
+=======
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="36dp"
+        android:fontFamily="casual"
+        android:text="Nuevo Prestamo "
+        android:layout_centerHorizontal="true"
+        android:layout_margin="0dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Nombre"
+        android:fontFamily="monospace"
+        android:textSize="20sp"
+        android:textColor="#2a3b7d"
+        android:text="Nombre"
+        android:layout_marginTop="70dp"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
         android:layout_alignParentLeft="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Producto"
+<<<<<<< HEAD
         android:text="Producto"
         android:textSize="20sp"
         android:textColor="#F44336"
+=======
+        android:fontFamily="monospace"
+        android:textSize="20sp"
+        android:textColor="#2a3b7d"
+        android:text="Producto"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
         android:layout_marginTop="40dp"
         android:layout_below="@+id/Nombre"
         />
@@ -37,9 +72,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Carac"
+<<<<<<< HEAD
         android:text="Caracteristicas"
         android:textSize="20sp"
         android:textColor="#F44336"
+=======
+        android:fontFamily="monospace"
+        android:textSize="20sp"
+        android:textColor="#2a3b7d"
+        android:text="Caracteristicas"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
         android:layout_marginTop="40dp"
         android:layout_below="@+id/Producto"
         />
@@ -74,7 +116,11 @@
         android:nextFocusDown="@id/p"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="30dp"
+=======
+        android:layout_marginTop="60dp"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
         android:lines="1"
         android:scrollHorizontally="true"
         android:ellipsize="end"
@@ -104,7 +150,12 @@
             android:layout_height="wrap_content"
             android:layout_weight=".5"
             android:onClick="onClick"
+<<<<<<< HEAD
             android:textColorHint="#F44336"
+=======
+            android:textColorHint="#2a3b7d"
+            android:fontFamily="monospace"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
             android:hint="@string/to_date" />
     </LinearLayout>
 
@@ -112,6 +163,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+=======
+        android:background="@android:color/transparent"
+        android:textColor="#2a3b7d"
+        android:fontFamily="monospace"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
         android:text="OK"
         android:id="@+id/OKButton"
         android:layout_alignParentBottom="true"

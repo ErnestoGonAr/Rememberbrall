@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -36,3 +37,100 @@
         android:text="Status: "
         />
 </LinearLayout>
+=======
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:onClick="detalle"
+
+    >
+
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LObjeto"
+        android:text="Objeto: "
+        />
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/LObjeto"
+        android:id="@+id/Objeto"
+        android:text="Articulo"
+        />
+
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LObjeto"
+        android:id="@+id/LPersona"
+        android:text="Se lo prestaste a: "
+        />
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LObjeto"
+        android:layout_toRightOf="@+id/LPersona"
+        android:id="@+id/Persona"
+        android:text="Persona"
+        />
+
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LPersona"
+        android:id="@+id/LDescripcion"
+        android:text="Descripcion: "
+        />
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LDescripcion"
+        android:id="@+id/Descripcion"
+        android:text="Descripcion"
+        />
+
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Descripcion"
+        android:id="@+id/LFecha"
+        android:text="Fecha de entrega: "
+        />
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Descripcion"
+        android:layout_toRightOf="@+id/LFecha"
+        android:id="@+id/Fecha"
+        android:text="Fecha de entrega"
+        />
+
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LFecha"
+        android:id="@+id/LStatus"
+        android:text="Status: "
+        />
+    <TextView
+        android:textAppearance="?android:textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LFecha"
+        android:layout_toRightOf="@+id/LStatus"
+        android:id="@+id/Status"
+        android:text="Status"
+        />
+</RelativeLayout>
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63

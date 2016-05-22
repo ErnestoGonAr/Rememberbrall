@@ -10,7 +10,11 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class BdHandler extends SQLiteOpenHelper {
     private static final String DB_NAME = "Prestamos.sqlite";
+<<<<<<< HEAD
     private static final int VERSION = 2;
+=======
+    private static final int VERSION = 3;
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 
     public BdHandler(Context context) {
         super(context, DB_NAME, null, VERSION);

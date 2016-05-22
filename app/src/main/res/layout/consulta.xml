@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent">
 
         <Button
@@ -13,6 +14,23 @@
             android:textSize="20sp"
             android:layout_gravity="center_vertical"
             android:onClick="onClick" />
+=======
+    android:layout_height="match_parent"
+    android:background="#72ff2b">
+
+        <Button
+            android:id="@+id/consul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@android:color/transparent"
+            android:textColor="#2a3b7d"
+            android:fontFamily="monospace"
+            android:text="Consulta"
+            android:textSize="20sp"
+            android:layout_gravity="center_vertical"
+            android:onClick="onClick"/>
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
     
         <EditText
             android:id="@+id/name"
@@ -21,6 +39,11 @@
             android:lines="1"
             android:scrollHorizontally="true"
             android:ellipsize="end"
+<<<<<<< HEAD
+=======
+            android:textColorHint="#2a3b7d"
+            android:fontFamily="monospace"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
             android:hint="Nombre"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
@@ -38,7 +61,13 @@
             android:scrollHorizontally="true"
             android:ellipsize="end"
             android:layout_below="@id/name"
+<<<<<<< HEAD
             android:layout_toRightOf="@id/consultor"
+=======
+            android:layout_toRightOf="@id/consul"
+            android:textColorHint="#2a3b7d"
+            android:fontFamily="monospace"
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
             android:hint="Por producto"/>
 
 

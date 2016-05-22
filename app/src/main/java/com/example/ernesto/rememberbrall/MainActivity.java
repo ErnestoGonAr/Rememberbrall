@@ -35,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
         pres.setOnClickListener(new View.OnClickListener(){
             @Override
+<<<<<<< HEAD
             public void onClick(View v){
+=======
+              public void onClick(View v){
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
                 Intent i = new Intent(MainActivity.this, Prestamo.class);
                 startActivity(i);
             }
@@ -58,4 +62,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63

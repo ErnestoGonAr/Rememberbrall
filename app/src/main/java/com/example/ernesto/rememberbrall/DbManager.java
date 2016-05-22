@@ -8,7 +8,11 @@ import android.database.sqlite.SQLiteDatabase;
 /**
  * Created by ernesto on 21/05/16.
  */
+<<<<<<< HEAD
 public class DbManager extends Exception {
+=======
+public class DbManager {
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 
     public static final String NOMBRET = "Prestamo";
     public static final String ID = "_id";
@@ -58,6 +62,7 @@ public class DbManager extends Exception {
         db.execSQL("UPDATE Prestamo SET Status="+status+"WHERE id="+id+";");
     }
 
+<<<<<<< HEAD
 
         public Cursor leerRegistros () {
         String[] campos = new String[]{ID, NombrePersona, Objeto, Descripcion, Fecha, Status};
@@ -69,6 +74,17 @@ public class DbManager extends Exception {
         String consulta="NombrePersona="+"'"+clave+"'";
         String[] campos = new String[]{ID, NombrePersona, Objeto, Descripcion, Fecha, Status};
         return db.query(NOMBRET, campos,consulta, null, null, null, null);
+=======
+    public Cursor leerRegistros(){
+        String[] campos= new String[]{ID, NombrePersona,Objeto,Descripcion,Fecha,Status};
+        return db.query(NOMBRET, campos,null,null,null,null,null);
+    }
+
+
+    public Cursor leerRegistros(String nombre, String objeto){
+        String[] campos= new String[]{ID, NombrePersona,Objeto,Descripcion,Fecha,Status};
+        return db.query(NOMBRET, campos,"NombrePersona = ? AND Objeto = ?",new String[]{nombre,objeto},null,null,null);
+>>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
     }
 
 }
