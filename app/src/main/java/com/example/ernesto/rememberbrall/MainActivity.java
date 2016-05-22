@@ -8,14 +8,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Toast toast;
-    BDHandler bd = new BDHandler(this);
-    SQLiteDatabase db;
+    DbManager db;
     Cursor c;
+    SimpleCursorAdapter adapter;
+    private ListView list;
     private Button pres;
     private Button consul;
     private Button verto;
@@ -24,7 +27,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ventana_principal);
 
+        db = new DbManager(this);
+
+        db.insertar(new String[]{"Pepe" ,"Lapiz", "Es amarillo", "2016-05-23", "NO ENTREGADO"});
+        db.insertar(new String[]{"Edgar" ,"Botella", "Es azul", "2016-05-24", "NO ENTREGADO"});
+        db.insertar(new String[]{"Betsy" ,"Cuaderno", "Es negro", "2016-05-25", "NO ENTREGADO"});
+
+        c= db.leerRegistros();
+
         inicializando();
+
+
 
         pres.setOnClickListener(new View.OnClickListener(){
             @Override

@@ -3,29 +3,36 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textoArticulo"
-        android:text="Articulo"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textoPersona"
-        android:text="Persona"
+        android:id="@+id/Persona"
+        android:text="Persona: "
 
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textoDescripcion"
-        android:text="Descricion"
+        android:id="@+id/Objeto"
+        android:text="Articulo: "
+        />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Descripcion"
+        android:text="Descripcion: "
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textoFechaD"
-        android:text="Fecha de Devolucion"
+        android:id="@+id/Fecha"
+        android:text="Fecha de entrega: "
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Status"
+        android:text="Status: "
         />
 </LinearLayout>

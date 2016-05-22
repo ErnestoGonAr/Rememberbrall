@@ -20,27 +20,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import static com.example.ernesto.rememberbrall.R.layout.Prestamo;
+import static com.example.ernesto.rememberbrall.R.layout.prestamo;
 
 /**
  * Created by ernesto on 20/05/16.
  */
 public class Prestamo extends Activity implements OnClickListener {
 
-    public BaseDatos bd;
+    public DbManager bd;
 
-    private EditText toDateEtxt;
-    private EditText nombret;
-    private EditText prot;
-    private EditText cart;
-    private DatePickerDialog toDatePickerDialog;
-    private SimpleDateFormat dateFormatter;
-    private Toast toast;
+    public EditText toDateEtxt;
+    public EditText nombret;
+    public EditText prot;
+    public EditText cart;
+    public DatePickerDialog toDatePickerDialog;
+    public SimpleDateFormat dateFormatter;
+    public Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prestamo);
+        bd = new DbManager(this);
 
         dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         findViewsById();
@@ -58,7 +59,7 @@ public class Prestamo extends Activity implements OnClickListener {
     private void findViewsById() {
 
         toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
-        //toDateEtxt.setInputType(InputType.TYPE_NULL);
+        toDateEtxt.setInputType(InputType.TYPE_NULL);
 
         nombret = (EditText) findViewById(R.id.n);
         prot = (EditText) findViewById(R.id.p);
@@ -81,18 +82,13 @@ public class Prestamo extends Activity implements OnClickListener {
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
     }
 
-    private boolean validar(){
-        toast.setText(nombret.getText());
-        toast.show();
-        if(nombret.getText().toString().length()!=0 && cart.getText().toString().length()!=0 && prot.getText().toString().length()!=0)return true;
-        return false;
-    }
+
     public boolean validaVacio(){
         String  campo=((TextView)findViewById(R.id.c)).getText().toString();
         String  campo2=((TextView)findViewById(R.id.n)).getText().toString();
         String  campo3=((TextView)findViewById(R.id.p)).getText().toString();
-        String  campo5=((TextView)findViewById(R.id.etxt_todate)).getText().toString();
-        if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo5.equals("")) {
+        String  campo4=((TextView)findViewById(R.id.etxt_todate)).getText().toString();
+        if (campo.equals("")|| campo2.equals("")|| campo3.equals("") || campo4.equals("")) {
             Toast.makeText(this, "Ha dejado campos vacios",
                     Toast.LENGTH_LONG).show();
             return false;
@@ -103,15 +99,16 @@ public class Prestamo extends Activity implements OnClickListener {
 
     public void insertar(View view){
         if(validaVacio()){
-            String[] data= {nombret.getText().toString(),
-                    prot.getText().toString(),
-                    cart.getText().toString(),
-                    prot.getText().toString(),
-                    cart.getText().toString(),
-                    toDateEtxt.getText().toString(),
-                    "NO ENTREGADO"};
+            String[] data= new String[7];
+            data[0]=nombret.getText().toString();
+            data[1]=prot.getText().toString();
+            data[2]=cart.getText().toString();
+            data[3]=prot.getText().toString();
+            data[4]=cart.getText().toString();
+            data[5]=toDateEtxt.getText().toString();
+            data[6]="NO ENTREGADO";
 
-            bd.insertarP(data);
+            bd.insertar(data);
         }
 
     }
