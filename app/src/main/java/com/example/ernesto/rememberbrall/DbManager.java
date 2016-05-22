@@ -63,4 +63,10 @@ public class DbManager {
         return db.query(NOMBRET, campos,null,null,null,null,null);
     }
 
+
+    public Cursor leerRegistros(String nombre, String objeto){
+        String[] campos= new String[]{ID, NombrePersona,Objeto,Descripcion,Fecha,Status};
+        return db.query(NOMBRET, campos,"NombrePersona = ? AND Objeto = ?",new String[]{nombre,objeto},null,null,null);
+    }
+
 }
