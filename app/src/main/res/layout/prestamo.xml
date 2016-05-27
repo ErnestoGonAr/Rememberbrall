@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,31 +11,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-<<<<<<< HEAD
-
-=======
-    android:background="#72ff2b"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
+    android:background="#F5F5F5"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-
+    </ScrollView>
     <TextView
-<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Nombre"
-        android:text="Nombre"
-        android:textSize="20sp"
-        android:textColor="#F44336"
         android:layout_marginTop="40dp"
-=======
         android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textColor="#000"
-        android:textSize="36dp"
-        android:fontFamily="casual"
+        android:textSize="55dp"
+        android:fontFamily="cursive"
         android:text="Nuevo Prestamo "
         android:layout_centerHorizontal="true"
         android:layout_margin="0dp"
@@ -41,69 +36,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Nombre"
-        android:fontFamily="monospace"
+        android:fontFamily="casual"
         android:textSize="20sp"
-        android:textColor="#2a3b7d"
-        android:text="Nombre"
+        android:textColor="#980000"
+        android:text="Persona"
         android:layout_marginTop="70dp"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
-        android:layout_alignParentLeft="true" />
+        android:layout_below="@+id/title"
+        android:layout_alignParentLeft="true"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Producto"
-<<<<<<< HEAD
-        android:text="Producto"
+        android:text="Objeto"
         android:textSize="20sp"
-        android:textColor="#F44336"
-=======
-        android:fontFamily="monospace"
-        android:textSize="20sp"
-        android:textColor="#2a3b7d"
-        android:text="Producto"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
+        android:textColor="#980000"
+        android:fontFamily="casual"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/Nombre"
         />
-
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Carac"
-<<<<<<< HEAD
-        android:text="Caracteristicas"
+        android:text="Descripción"
         android:textSize="20sp"
-        android:textColor="#F44336"
-=======
-        android:fontFamily="monospace"
-        android:textSize="20sp"
-        android:textColor="#2a3b7d"
-        android:text="Caracteristicas"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
+        android:fontFamily="casual"
+        android:textColor="#980000"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/Producto"
         />
 
     <EditText
-        android:id="@+id/c"
+        android:id="@+id/n"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:lines="1"
+        android:layout_marginTop="30dp"
+        android:singleLine="true"
         android:scrollHorizontally="true"
         android:ellipsize="end"
-        android:layout_alignBottom="@+id/Carac"
+        android:layout_alignBottom="@+id/Nombre"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/Carac"
+        android:layout_toRightOf="@id/Nombre"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/Carac" />
+        android:layout_toEndOf="@+id/Nombre"
+        />
     <EditText
         android:id="@+id/p"
-        android:nextFocusDown="@id/c"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:lines="1"
+        android:singleLine="true"
         android:scrollHorizontally="true"
         android:ellipsize="end"
         android:layout_alignBottom="@+id/Producto"
@@ -111,24 +95,21 @@
         android:layout_toRightOf="@id/Producto"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/Producto" />
+
     <EditText
-        android:id="@+id/n"
-        android:nextFocusDown="@id/p"
+        android:id="@+id/c"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:layout_marginTop="30dp"
-=======
-        android:layout_marginTop="60dp"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
-        android:lines="1"
+        android:singleLine="true"
         android:scrollHorizontally="true"
         android:ellipsize="end"
+        android:layout_alignBottom="@+id/Carac"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/Nombre"
+        android:layout_toRightOf="@id/Carac"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@id/Nombre"
-        />
+        android:layout_toEndOf="@+id/Carac" />
+
+
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -139,43 +120,45 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:weightSum="1"
         android:layout_below="@+id/Carac"
         tools:context=".MainActivity" >
 
 
         <EditText
             android:id="@+id/etxt_todate"
+            android:singleLine="true"
+            android:editable="false"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight=".5"
+            android:layout_weight="1"
             android:onClick="onClick"
-<<<<<<< HEAD
-            android:textColorHint="#F44336"
-=======
-            android:textColorHint="#2a3b7d"
-            android:fontFamily="monospace"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
+            android:textColorHint="#980000"
+            android:fontFamily="casual"
             android:hint="@string/to_date" />
+        <View
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:gravity=""
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:background="@android:color/transparent"
+            android:fontFamily="casual"
+            android:textSize="15sp"
+            android:text="I N S E R T A R "
+            android:id="@+id/OKButton"
+            android:singleLine="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:onClick="insertar"
+            />
     </LinearLayout>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-<<<<<<< HEAD
-=======
-        android:background="@android:color/transparent"
-        android:textColor="#2a3b7d"
-        android:fontFamily="monospace"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
-        android:text="OK"
-        android:id="@+id/OKButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:onClick="insertar"
-        />
 
 
 
 </RelativeLayout>
+    </ScrollView>

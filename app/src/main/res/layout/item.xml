@@ -1,136 +1,120 @@
-<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Persona"
-        android:text="Persona: "
-
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Objeto"
-        android:text="Articulo: "
-        />
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Descripcion"
-        android:text="Descripcion: "
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Fecha"
-        android:text="Fecha de entrega: "
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Status"
-        android:text="Status: "
-        />
-</LinearLayout>
-=======
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
     android:onClick="detalle"
-
+    android:background="#F5F5F5"
     >
 
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/LObjeto"
+        android:textColor="#000"
+        android:fontFamily="monospace"
         android:text="Objeto: "
         />
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/LObjeto"
         android:id="@+id/Objeto"
+        android:textColor="#980000"
+        android:fontFamily="monospace"
         android:text="Articulo"
         />
 
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LObjeto"
         android:id="@+id/LPersona"
+        android:textColor="#000"
+        android:fontFamily="monospace"
         android:text="Se lo prestaste a: "
         />
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LObjeto"
         android:layout_toRightOf="@+id/LPersona"
         android:id="@+id/Persona"
+        android:textColor="#980000"
+        android:fontFamily="monospace"
         android:text="Persona"
         />
 
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LPersona"
         android:id="@+id/LDescripcion"
+        android:textColor="#000"
+        android:fontFamily="monospace"
         android:text="Descripcion: "
         />
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/LDescripcion"
+        android:gravity="left"
         android:id="@+id/Descripcion"
-        android:text="Descripcion"
-        />
+        android:textColor="#980000"
+        android:fontFamily="monospace"
+        android:text="Descripcion hola como estas"
+        android:maxLines="3"
+        android:lines="3"
+        android:layout_below="@+id/LPersona"
+        android:layout_toRightOf="@+id/LDescripcion"
+        android:layout_toEndOf="@+id/LDescripcion" />
 
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Descripcion"
         android:id="@+id/LFecha"
+        android:textColor="#000"
+        android:fontFamily="monospace"
         android:text="Fecha de entrega: "
         />
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Descripcion"
         android:layout_toRightOf="@+id/LFecha"
         android:id="@+id/Fecha"
-        android:text="Fecha de entrega"
+        android:textColor="#980000"
+        android:fontFamily="monospace"
+        android:text="2014-20-05"
         />
 
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LFecha"
         android:id="@+id/LStatus"
+        android:textColor="#000"
+        android:fontFamily="monospace"
         android:text="Status: "
         />
     <TextView
-        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LFecha"
         android:layout_toRightOf="@+id/LStatus"
         android:id="@+id/Status"
+        android:textColor="#980000"
+        android:fontFamily="monospace"
         android:text="Status"
         />
 </RelativeLayout>
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
+

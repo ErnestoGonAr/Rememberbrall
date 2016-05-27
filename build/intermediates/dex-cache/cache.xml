@@ -1,2 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.3.0_4dcd67e248ec8e8dfeee17a9f7ab73d5ba075df8.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="30931b6b254bc087e41fe2081dda7be0b349fa68">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/instant-run_a362cc3508888926a66741d147a1c32db60a987b.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.3.0_e1193b614bc8615e29c97d545b93194fe1296cb7.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.3.0_bf9b794c6bbbe7427589e3ca3577b09bd466221b.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-8.1.0_de8c59779b668cd139d7c84a3fbdbbff24b8ec12.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.3.0_e246c287ba02e93f1eac11a11fa05f88d241ea1f.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.1.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-8.1.0_2a69cee4f9d75e74eaba0199b46bcea1fd7c5d45.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0_fc0817c2d89647fcf18ad6634fb462f483b07b6f.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="22d68e6833ce1acd28cbc855021d5298d2842e56">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_5103250056a33b0845e4e4169ab5fb9723ac6e94.jar" />
+    </item>
+    <item
+        jar="/home/ernesto/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/home/ernesto/AndroidStudioProjects/Rememberbrall/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0_f5285214ce80003f65a091205c9f77c87fecaa1b.jar" />
+    </item>
+
+</items>

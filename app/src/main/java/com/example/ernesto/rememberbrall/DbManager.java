@@ -8,13 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 /**
  * Created by ernesto on 21/05/16.
  */
-<<<<<<< HEAD
-public class DbManager extends Exception {
-=======
 public class DbManager {
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 
-    public static final String NOMBRET = "Prestamo";
+    public static final String NOMBRET = "Prestamos";
     public static final String ID = "_id";
     public static final String NombrePersona = "NombrePersona";
     public static final String Objeto = "Objeto";
@@ -53,38 +49,25 @@ public class DbManager {
         return contenedor;
     }
 
-    public boolean eliminar(String id){
-        if(db.delete(NOMBRET, ID+"=?",new String[]{id})==-1)return false;
-        return true;
+    public void eliminar(String id){
+        db.delete(NOMBRET, ID+"=?",new String[]{id});
     }
 
-    public void modificarStatus(String id, String status){
-        db.execSQL("UPDATE Prestamo SET Status="+status+"WHERE id="+id+";");
+    public void modificar(String id,String[] registros){
+        db.update(NOMBRET,generarValores(registros),ID+"=?",new String[]{id});
     }
 
-<<<<<<< HEAD
 
-        public Cursor leerRegistros () {
+    public Cursor leerRegistros () {
         String[] campos = new String[]{ID, NombrePersona, Objeto, Descripcion, Fecha, Status};
         return db.query(NOMBRET, campos, null, null, null, null, null);
     }
 
-    public Cursor leerRegistros(String clave) {
+    public Cursor leerRegistros(String nom) {
 
-        String consulta="NombrePersona="+"'"+clave+"'";
-        String[] campos = new String[]{ID, NombrePersona, Objeto, Descripcion, Fecha, Status};
-        return db.query(NOMBRET, campos,consulta, null, null, null, null);
-=======
-    public Cursor leerRegistros(){
         String[] campos= new String[]{ID, NombrePersona,Objeto,Descripcion,Fecha,Status};
-        return db.query(NOMBRET, campos,null,null,null,null,null);
-    }
+        return db.query(NOMBRET, campos,"NombrePersona = ? OR Objeto = ?",new String[]{nom,nom},null,null,null);
 
-
-    public Cursor leerRegistros(String nombre, String objeto){
-        String[] campos= new String[]{ID, NombrePersona,Objeto,Descripcion,Fecha,Status};
-        return db.query(NOMBRET, campos,"NombrePersona = ? AND Objeto = ?",new String[]{nombre,objeto},null,null,null);
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
     }
 
 }

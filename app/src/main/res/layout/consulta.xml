@@ -2,80 +2,57 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-<<<<<<< HEAD
-    android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/consultor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            android:text="Consulta"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"
-            android:onClick="onClick" />
-=======
     android:layout_height="match_parent"
-    android:background="#72ff2b">
+    android:background="#F5F5F5">>
 
-        <Button
-            android:id="@+id/consul"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            android:background="@android:color/transparent"
-            android:textColor="#2a3b7d"
-            android:fontFamily="monospace"
-            android:text="Consulta"
-            android:textSize="20sp"
-            android:layout_gravity="center_vertical"
-            android:onClick="onClick"/>
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
-    
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:lines="1"
-            android:scrollHorizontally="true"
-            android:ellipsize="end"
-<<<<<<< HEAD
-=======
-            android:textColorHint="#2a3b7d"
-            android:fontFamily="monospace"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
-            android:hint="Nombre"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            android:layout_alignLeft="@+id/produ"
-            android:layout_alignStart="@+id/produ"
-            android:layout_alignRight="@+id/produ"
-            android:layout_alignEnd="@+id/produ" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:id="@+id/consultar"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:textSize="55dp"
+        android:fontFamily="cursive"
+        android:text="Consultas "
+        android:layout_centerHorizontal="true"
+        android:layout_margin="0dp"
+        />
 
-        <EditText
-            android:id="@+id/produ"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="0dp"
-            android:lines="1"
-            android:scrollHorizontally="true"
-            android:ellipsize="end"
-            android:layout_below="@id/name"
-<<<<<<< HEAD
-            android:layout_toRightOf="@id/consultor"
-=======
-            android:layout_toRightOf="@id/consul"
-            android:textColorHint="#2a3b7d"
-            android:fontFamily="monospace"
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
-            android:hint="Por producto"/>
+    <ImageButton
+        android:id="@+id/consultor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:src="@mipmap/consultas"
+        android:layout_gravity="center_vertical"
+        android:layout_below="@id/consultar"
+        android:onClick="onClick" />
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:inputType="text"
+        android:textColorHint="#980000"
+        android:fontFamily="casual"
+        android:hint="Nombre u Objeto"
+        android:layout_below="@id/consultar"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/consultor"
+        android:layout_toRightOf="@id/consultor"
+        android:layout_alignRight="@+id/consultor"
+        android:layout_alignEnd="@+id/consultor" />
 
 
     <ListView
         android:id="@+id/Lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/produ"
+        android:layout_below="@id/name"
         >
 
     </ListView>

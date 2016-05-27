@@ -28,21 +28,18 @@ import static com.example.ernesto.rememberbrall.R.layout.prestamo;
 public class Prestamo extends Activity implements OnClickListener {
 
     public DbManager bd;
-
     public EditText toDateEtxt;
     public EditText nombret;
     public EditText prot;
     public EditText cart;
     public DatePickerDialog toDatePickerDialog;
     public SimpleDateFormat dateFormatter;
-    public Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.prestamo);
         bd = new DbManager(this);
-
         dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
         findViewsById();
         setDateTimeField();
@@ -50,20 +47,17 @@ public class Prestamo extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-
         if(v == toDateEtxt) {
             toDatePickerDialog.show();
         }
     }
 
     private void findViewsById() {
-
-        toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
-        toDateEtxt.setInputType(InputType.TYPE_NULL);
-
         nombret = (EditText) findViewById(R.id.n);
         prot = (EditText) findViewById(R.id.p);
         cart = (EditText) findViewById(R.id.c);
+        toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
+        toDateEtxt.setInputType(InputType.TYPE_NULL);
 
     }
 
@@ -97,21 +91,26 @@ public class Prestamo extends Activity implements OnClickListener {
 
     }
 
-
     public void insertar(View view){
         if(validaVacio()){
-            String[] data= new String[7];
+            String[] data= new String[5];
             data[0]=nombret.getText().toString();
             data[1]=prot.getText().toString();
             data[2]=cart.getText().toString();
-            data[3]=prot.getText().toString();
-            data[4]=cart.getText().toString();
-            data[5]=toDateEtxt.getText().toString();
-            data[6]="NO ENTREGADO";
-
+            data[3]=toDateEtxt.getText().toString();
+            data[4]="NO ENTREGADO";
             bd.insertar(data);
+            Toast.makeText(this, "Se ha insertado prestamo!!",
+                    Toast.LENGTH_LONG).show();
+            clean();
         }
+    }
 
+    private void clean(){
+        nombret.setText("");
+        prot.setText("");
+        cart.setText("");
+        toDateEtxt.setText("Devolucion");
     }
 
 

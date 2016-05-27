@@ -2,144 +2,139 @@
 package com.example.ernesto.rememberbrall;
 
 import android.app.Activity;
-<<<<<<< HEAD
 import android.content.DialogInterface;
-=======
 import android.content.Context;
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-<<<<<<< HEAD
 import android.text.Editable;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
-=======
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.lang.String.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
-
 
 
 /**
  * Created by Edgar on 21/05/16.
  */
-<<<<<<< HEAD
 public class Consulta extends Activity implements View.OnClickListener {
-=======
-public class Consulta extends AppCompatActivity {
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 
     DbManager db;
     Cursor c;
     SimpleCursorAdapter adapter;
     private ListView list;
-<<<<<<< HEAD
-    Button consulta;
-    TextView textoNombre;
-    Editable p;
-    String q;
-=======
+    ImageButton consulta;
+    EditText textoNombre;
+    public static String q="";
     public static String nom="";
     public static String ob="";
 
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.consulta);
-
-<<<<<<< HEAD
         inicializar();
         db = new DbManager(this);
         llenar();
-
-        /*consulta.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                llenar2();
-            }
-        });*/
-
-
     }
 
-
-    private void llenar2() {
-        list = (ListView) findViewById(R.id.Lista);
-        q=textoNombre.getText().toString();
-        c = db.leerRegistros(q);
-
-        String[] from = new String[]{db.NombrePersona, db.Objeto, db.Descripcion, db.Fecha, db.Status};
-
-        int[] to = new int[]{R.id.Persona, R.id.Objeto, R.id.Descripcion, R.id.Fecha, R.id.Status};
-
-        adapter = new SimpleCursorAdapter(this, R.layout.item, c, from, to);
-
-        list.setAdapter(adapter);
-    }
-=======
-        db = new DbManager(this);
-        llenar();
-
-    }
-
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
     private void llenar() {
         list = (ListView) findViewById(R.id.Lista);
 
-        c = db.leerRegistros();
+        try {
+            c = db.leerRegistros();
+            c.moveToFirst();
+            String[] datos = new String[5];
+            do {
+                datos[0]= c.getString(1);
+                datos[1]= c.getString(2);
+                datos[2]= c.getString(3);
+                datos[3]= c.getString(4);
+                datos[4]= c.getString(5);
 
-<<<<<<< HEAD
+                String[] fechaP = datos[3].split("-");
+                int añoP = Integer.parseInt(fechaP[0])*365;
+                int mesP = Integer.parseInt(fechaP[1])*30;
+                int diasP = Integer.parseInt(fechaP[2]);
+
+                Calendar date = Calendar.getInstance();
+                int año = date.get(Calendar.YEAR)*365;
+                int mes = (date.get(Calendar.MONTH)+1)*30;
+                int dias = date.get(Calendar.DAY_OF_MONTH);
+
+                int fechaPrestamo = añoP+mesP+diasP;
+                int fechaActual = año+mes+dias;
+
+                if(fechaActual>fechaPrestamo){
+                    datos[4] = "RETRASADO";
+                    db.modificar(c.getString(0),datos);
+                }else {
+                    datos[4] = "NO ENTREGADO";
+                    db.modificar(c.getString(0),datos);
+                }
+            } while (c.moveToNext());
+        }catch (CursorIndexOutOfBoundsException e){
+            Toast.makeText(this, "No hay registros", Toast.LENGTH_SHORT).show();
+        }
+
+        String[] from = new String[]{db.NombrePersona, db.Objeto, db.Descripcion, db.Fecha, db.Status};
+        int[] to = new int[]{R.id.Persona, R.id.Objeto, R.id.Descripcion, R.id.Fecha, R.id.Status};
+        adapter = new SimpleCursorAdapter(this, R.layout.item, c, from, to);
+        list.setAdapter(adapter);
+    }
+    private void llenar2() {
+        list = (ListView) findViewById(R.id.Lista);
+        TextView n = (TextView) findViewById(R.id.name);
+        String x = n.getText().toString();
+
+        c=db.leerRegistros(x);
+
         String[] from = new String[]{db.NombrePersona, db.Objeto, db.Descripcion, db.Fecha, db.Status};
 
         int[] to = new int[]{R.id.Persona, R.id.Objeto, R.id.Descripcion, R.id.Fecha, R.id.Status};
-=======
-        String[] from = new String[]{ db.Objeto,db.NombrePersona, db.Descripcion, db.Fecha, db.Status};
-
-        int[] to = new int[]{R.id.Objeto,R.id.Persona, R.id.Descripcion, R.id.Fecha, R.id.Status};
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 
         adapter = new SimpleCursorAdapter(this, R.layout.item, c, from, to);
 
         list.setAdapter(adapter);
     }
-<<<<<<< HEAD
     public void inicializar(){
-        Button consulta=(Button)findViewById(R.id.consultor);
-        TextView textoNombre=(TextView) findViewById(R.id.name);
+        consulta=(ImageButton)findViewById(R.id.consultor);
+        textoNombre=(EditText) findViewById(R.id.name);
     }
-
-    @Override
-    public void onClick(View v) {
-        llenar2();
-    }
-=======
-
-
     public void detalle(View view){
         TextView persona = (TextView) view.findViewById(R.id.Persona);
         nom = persona.getText().toString();
         TextView Objeto = (TextView) view.findViewById(R.id.Objeto);
         ob = persona.getText().toString();
 
-        Intent i = new Intent(Consulta.this, Item.class);
+        Intent i = new Intent(Consulta.this, Detalle.class);
         startActivity(i);
     }
+    @Override
+    public void onClick(View v) {
+        llenar2();
+    }
 
->>>>>>> 7252aeed4cd31cf133db748e27ccf757d8f31d63
 }
+
 
